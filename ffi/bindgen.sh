@@ -14,6 +14,6 @@ ss+='pub type mp3d_sample_t = f32;/'
 
 git submodule update --init --recursive && \
     bindgen ffi/bindgen.h \
-        --use-core --ctypes-prefix libc \
+        --use-core \
         --output src/ffi.rs -- -Iffi/minimp3 && \
     sed -i "${ss}" src/ffi.rs
